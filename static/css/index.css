@@ -1,0 +1,368 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:wght@700&family=Open+Sans:wght@700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans';
+    color: white;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    background: linear-gradient(201.07deg, #4200CF 10.16%, #FF00A8 82.18%), #FFFFFF;
+    height: 105vh;
+    width: 100vw;
+}
+
+button, a {
+    cursor: pointer;
+}
+
+button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    border: 5px solid #FFFFFF;
+    border-radius: 50px;
+    font-weight: 700;
+    background: transparent;
+}
+
+.solid {
+    background: white;
+}
+
+.mobile {
+    display: none;
+}
+
+.navbar-mobile {
+    display: none;
+}
+
+.hidden {
+    display: none;
+}
+
+@media screen and (max-width: 992px) {
+    .mobile {
+        display: inherit;
+    }
+    .desktop {
+        display: none;
+    }
+    .navbar-mobile {
+        display: inherit;
+    }
+}
+
+/**
+                                                                                      
+888b      88         db   8b           d8  88888888ba         db         88888888ba   
+8888b     88        d88b  `8b         d8'  88      "8b       d88b        88      "8b  
+88 `8b    88       d8'`8b  `8b       d8'   88      ,8P      d8'`8b       88      ,8P  
+88  `8b   88      d8'  `8b  `8b     d8'    88aaaaaa8P'     d8'  `8b      88aaaaaa8P'  
+88   `8b  88     d8YaaaaY8b  `8b   d8'     88""""""8b,    d8YaaaaY8b     88""""88'    
+88    `8b 88    d8""""""""8b  `8b d8'      88      `8b   d8""""""""8b    88    `8b    
+88     `8888   d8'        `8b  `888'       88      a8P  d8'        `8b   88     `8b   
+88      `888  d8'          `8b  `8'        88888888P"  d8'          `8b  88      `8b  
+                                                                                                                                                                     
+**/
+
+nav {
+    padding: 32px 50px; 
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > .navbar-body > .nav-item {
+    width: 171px;
+    height: 50px;
+    margin-left: 50px;
+    transition: 0.3s;
+}
+
+nav > .navbar-body > .nav-item:hover {
+    background: white;
+    color: #5800ca;
+}
+
+nav > .navbar-body > .solid {
+    color: #4200CF;
+    transition: 0.3s;
+}
+
+nav > .navbar-body > .solid:hover {
+    color: white;
+    background: transparent
+}
+
+.navbar-expand {
+    border: transparent;
+}
+
+/**     
+
+ ad88888ba   88888888888  ,ad8888ba,  888888888888  88    ,ad8888ba,    888b      88          88888888ba     ,ad8888ba,    88888888ba,  8b        d8  
+d8"     "8b  88          d8"'    `"8b      88       88   d8"'    `"8b   8888b     88          88      "8b   d8"'    `"8b   88      `"8b  Y8,    ,8P   
+Y8,          88         d8'                88       88  d8'        `8b  88 `8b    88          88      ,8P  d8'        `8b  88        `8b  Y8,  ,8P    
+`Y8aaaaa,    88aaaaa    88                 88       88  88          88  88  `8b   88          88aaaaaa8P'  88          88  88         88   "8aa8"     
+  `"""""8b,  88"""""    88                 88       88  88          88  88   `8b  88          88""""""8b,  88          88  88         88    `88'      
+        `8b  88         Y8,                88       88  Y8,        ,8P  88    `8b 88          88      `8b  Y8,        ,8P  88         8P     88       
+Y8a     a8P  88          Y8a.    .a8P      88       88   Y8a.    .a8P   88     `8888          88      a8P   Y8a.    .a8P   88      .a8P      88       
+ "Y88888P"   88888888888  `"Y8888Y"'       88       88    `"Y8888Y"'    88      `888          88888888P"     `"Y8888Y"'    88888888Y"'       88      
+
+**/
+
+.body {
+    padding: 150px 0; 
+}
+
+.body > h1 {
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 60px; 
+}
+
+.body > button {
+    margin-top: 24px;
+    width: 620px;
+    font-weight: 600;
+    font-size: 25px; 
+    padding: 24px;
+    background: transparent;
+    transition: 0.3s;
+}
+
+.body > button:hover {
+    background: white;
+    color: #a800ba;
+}
+
+@media screen and (max-width: 992px) {
+    .body > h1 {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .body > button {
+        margin-top: 24px;
+        width: 275px;
+        font-weight: 600;
+        font-size: 25px; 
+        padding: 10px;
+        background: transparent;
+    }
+}
+
+@media screen and (min-width: 1441px) {
+    .body > .desktop > .desktop-head > .desktop-head-items {
+        position: absolute;
+        top: 25%;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+    }
+    .body > .desktop > .desktop-head > .desktop-head-items > h1 {
+        font-weight: 600;
+        font-size: 8vh;
+        line-height: 4vw;
+    }
+    .body > .desktop > .desktop-head > .desktop-head-items > button {
+        margin-top: 24px;
+        width: 100%;
+        font-weight: 600;
+        font-size: 3vh; 
+        padding: 2%;
+        background: transparent;
+    }
+    .body > .desktop > .desktop-image > img {
+        width: 80%;
+    }
+}
+
+/**   
+
+88888888888                                                       
+88                                  ,d                            
+88                                  88                            
+88aaaaa   ,adPPYba,    ,adPPYba,  MM88MMM  ,adPPYba,  8b,dPPYba,  
+88"""""  a8"     "8a  a8"     "8a   88    a8P_____88  88P'   "Y8  
+88       8b       d8  8b       d8   88    8PP"""""""  88          
+88       "8a,   ,a8"  "8a,   ,a8"   88,   "8b,   ,aa  88          
+88        `"YbbdP"'    `"YbbdP"'    "Y888  `"Ybbd8"'  88          
+
+**/
+
+footer * {
+    color: #000;
+}
+
+footer {
+    background: white;
+    position: relative;
+    top: -5vh;
+    padding: 32px 50px;
+    display: flex;
+    justify-content: space-between;
+    border: 5px solid transparent;
+    border-radius: 25px;
+}
+
+footer h1 {
+    font-size: 54px;
+}
+
+footer h2 {
+    font-size: 21px;
+}
+
+footer .navbar-body div {
+    display: inline-block;
+    padding: 0 55px;
+}
+
+@media screen and (max-width: 992px) {
+    footer {
+        padding: 32px 50px;
+        display: block;
+        border: none;
+        border-radius: none;
+    }
+    footer h1 {
+        font-size: 40px;
+    }
+    footer h2 {
+        font-size: 18px;
+    }
+    footer .navbar-brand {
+        margin-bottom: 45px;
+    }
+    footer .navbar-body .last {
+        margin-top: 30px;
+    }
+    footer .navbar-end {
+        margin-top: 45px;
+    }
+}
+
+footer a li, footer a i {
+    transition: 0.3s;
+}
+
+footer a li:hover, footer a i:hover {
+    color: #AA00BA;
+}
+
+/**
+                                                                                                                 
+  ,ad8888ba,    ,ad8888ba,    88           88                  db         88888888ba    ad88888ba   88888888888  
+ d8"'    `"8b  d8"'    `"8b   88           88                 d88b        88      "8b  d8"     "8b  88           
+d8'           d8'        `8b  88           88                d8'`8b       88      ,8P  Y8,          88           
+88            88          88  88           88               d8'  `8b      88aaaaaa8P'  `Y8aaaaa,    88aaaaa      
+88            88          88  88           88              d8YaaaaY8b     88""""""'      `"""""8b,  88"""""      
+Y8,           Y8,        ,8P  88           88             d8""""""""8b    88                   `8b  88           
+ Y8a.    .a8P  Y8a.    .a8P   88           88            d8'        `8b   88           Y8a     a8P  88           
+  `"Y8888Y"'    `"Y8888Y"'    88888888888  88888888888  d8'          `8b  88            "Y88888P"   88888888888  
+                                                                                                                
+**/
+
+.navbar-collapsed {
+    padding-top: 32px;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(201.07deg, #FF00A8 10.16%, #4200CF 82.18%), #FFFFFF;
+    animation: go-back 1.5s;
+}
+
+.navbar-collapsed > .navbar-body {
+    padding-top: 32px;
+}
+
+
+.navbar-collapsed > .navbar-body > a {
+    display: block;
+    font-size: 5vh;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.navbar-collapsed > .navbar-body > a:hover {
+    display: block;
+    text-align: center;
+    color: #c0bfbc;
+}
+
+.navbar-collapsed > .navbar-expand {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+}
+
+/**
+
+COOKIE MESSAGE AND ANIMATIONS
+
+**/
+
+.cookie-message {
+    width: 36vw;
+    padding: 1vw;
+    background: white;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0; 
+    margin: 0 auto;
+    border-radius: 45px;
+    box-shadow: 5px 5px #4200CF;
+    display: none;
+}
+
+.cookie-message * {
+    color: black;
+}
+
+.cookie-message h1 {
+    font-size: 3vh;
+}
+
+
+@media screen and (max-width: 992px) {
+    .cookie-message h1 .cookie-message button {
+        font-size: 2.5vh;
+    }
+    
+    .cookie-message {
+        padding: 1vh;
+        width: 98vw;
+        text-align: center !important;
+    }
+}
+        
+@keyframes go-back {
+    0% {
+        transform: translateX(101vh);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes go-back-2 {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(101vh);
+    }
+}

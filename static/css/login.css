@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Josefin+Sans:wght@700&family=Open+Sans:wght@700&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans';
+    color: white;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+main {
+    background: linear-gradient(201.07deg, #4200CF 10.16%, #FF00A8 82.18%), #FFFFFF;
+    height: 100vh;
+    width: 100vw;
+}
+
+/**     
+
+ ad88888ba   88888888888  ,ad8888ba,  888888888888  88    ,ad8888ba,    888b      88          88888888ba     ,ad8888ba,    88888888ba,  8b        d8  
+d8"     "8b  88          d8"'    `"8b      88       88   d8"'    `"8b   8888b     88          88      "8b   d8"'    `"8b   88      `"8b  Y8,    ,8P   
+Y8,          88         d8'                88       88  d8'        `8b  88 `8b    88          88      ,8P  d8'        `8b  88        `8b  Y8,  ,8P    
+`Y8aaaaa,    88aaaaa    88                 88       88  88          88  88  `8b   88          88aaaaaa8P'  88          88  88         88   "8aa8"     
+  `"""""8b,  88"""""    88                 88       88  88          88  88   `8b  88          88""""""8b,  88          88  88         88    `88'      
+        `8b  88         Y8,                88       88  Y8,        ,8P  88    `8b 88          88      `8b  Y8,        ,8P  88         8P     88       
+Y8a     a8P  88          Y8a.    .a8P      88       88   Y8a.    .a8P   88     `8888          88      a8P   Y8a.    .a8P   88      .a8P      88       
+ "Y88888P"   88888888888  `"Y8888Y"'       88       88    `"Y8888Y"'    88      `888          88888888P"     `"Y8888Y"'    88888888Y"'       88      
+
+**/
+
+.body {
+    background: white;
+    height: 90%;
+    width: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 5px solid transparent;
+    border-radius: 50px;
+    padding: 50px in;
+}
+
+.body * {
+    color: black;
+    text-align: center;
+}
+
+.body h1 {
+    margin-top: 50px;
+    font-size: 5vh;
+    text-align: center;
+}
+
+.body h2 {
+    font-size: 2vh;
+    text-align: left;
+    margin-left: 10%;
+}
+
+.body input {
+    margin-top: 10px;
+    width: 80%;
+    height: 5vh;
+    border: 5px solid transparent;
+    border-radius: 50px;
+    background-color: #AA00BA;
+    color: white;
+}
+
+.body input::placeholder {
+  color: #FFF;
+  opacity: 80%;
+}
+
+.body form div {
+    margin-top: 30px;
+}
+
+.body a {
+    transition: 0.3s;
+}
+
+.body a:hover {
+    color: #AA00BA;
+}
+
+.body button {
+    margin-top: 10px;
+    width: 80%;
+    height: 5vh;
+    border: 5px solid transparent;
+    border-radius: 50px;
+    background-color: #AA00BA;
+    color: white;
+}
+
+@media screen and (max-width: 992px) {
+    .body {
+      height: 100vh;
+      width: 100vw;
+      border: none;
+      border-radius: 0;
+    }
+}
+
+/**
+
+FLASH MESSAGE
+
+**/
+
+.flash-message {
+    width: 36vw;
+    padding: 1vw;
+    background: white;
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0; 
+    margin: 0 auto;
+    border-radius: 45px;
+    box-shadow: 5px 5px #4200CF;
+}
+
+.flash-message * {
+    color: black;
+}
+
+.flash-message button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 20px;
+    border: 5px solid tranparent;
+    font-weight: 700;
+    background: transparent;
+}
+
+@media screen and (max-width: 992px) {
+    .flash-message h1 .flash-message button {
+        font-size: 2.5vh;
+    }
+    
+    .flash-message {
+        padding: 1vh;
+        width: 98vw;
+        text-align: center !important;
+    }
+}

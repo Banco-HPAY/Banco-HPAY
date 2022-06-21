@@ -1,0 +1,88 @@
+{% extends "base-dashboard.html" %}
+
+{% block home %}
+<div id="withdraw">
+  <h2>Seu saldo: R$ {{ money }}.</h2>
+  <button onclick="transfer();">
+    Transferir
+  </button>
+  <button onclick="deposit();">
+    Depositar
+  </button>
+</div>
+<h1>Pódio dos mais ricos:</h1>
+<div class="podio">
+  <h2>Top 3.</h2>
+  <ol>
+    {% for user in top_3 %}
+      <li>{{ user }} - R$ {{ top_3[user] }}.</li>
+    {% endfor %}
+</ol>
+</div>
+<h1>Histórico bancário:</h1>
+<div class="history">
+  <h2>Traferências e depósitos.</h2>
+  {% for transferencia in dictionary_transactions %}
+    <div>
+      <br/>
+      {% if dictionary_transactions[transferencia][0] == "Depósito" %}
+        <h2>Tipo: {{ dictionary_transactions[transferencia][0]}}</h2>
+        <span>De: Banco HPAY</span><br/>
+        <span>Para: {{ dictionary_transactions[transferencia][1]}}</span>
+        <p>Valor: {{ dictionary_transactions[transferencia][3] }}</p>
+      {% endif %}
+      {% if dictionary_transactions[transferencia][0] == "Transferência" %}
+        <h2>Tipo: {{ dictionary_transactions[transferencia][0]}}</h2>
+        <span>De: {{ dictionary_transactions[transferencia][1] }}</span><br/>
+        <span>Para: {{ dictionary_transactions[transferencia][2]}}</span>
+        <p>Valor: {{ dictionary_transactions[transferencia][3] }}</p>
+      {% endif %}
+      <br/>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
+
+{% block transfer %}
+<div id="withdraw">
+  <h2>Escolha um método</h2>
+  <div class="nav-pills" id="v-pills-tab" role="tablist">
+    <button onclick="transfer();" id="v-pills-transfer-tab" data-bs-toggle="pill" data-bs-target="#v-pills-transfer" type="button" role="tab" aria-controls="v-pills-transfer" aria-selected="false">
+      Transferir
+    </button>
+    <button onclick="deposit();" id="v-pills-deposit-tab" class="last" data-bs-toggle="pill" data-bs-target="#v-pills-deposit" type="button" role="tab" aria-controls="v-pills-deposit" aria-selected="false">
+      Depositar
+    </button>
+  </div>
+</div>
+<h1 id="method">Selecione o método</h1>
+<div class="tab-content" id="v-pills-tabContent">
+  <div class="tab-pane fade" id="v-pills-transfer" role="tabpanel" aria-labelledby="v-pills-transfer-tab" tabindex="0">
+    <form action="{{ url_for('api.user_transfer') }}" method="POST">
+      <input type="number" placeholder="Insira o valor da transferência." id="value" name="value">
+      <input type="email" placeholder="Digite o e-mail da pessoa." id="email" name="email">
+      <button type="submit">Enviar transferência via PIXrulito.</button>
+    </form>
+  </div>
+  <div class="tab-pane fade" id="v-pills-deposit" role="tabpanel" aria-labelledby="v-pills-deposit-tab" tabindex="0">
+    <h2>Clique no botão abaixo para adicionar dinheiro a sua conta.</h2>
+    <form action="{{ url_for('api.user_deposit') }}" method="POST">
+      <button type="submit">Pedir depósito via PIXrulito.</button>
+    </form>
+  </div>
+</div>
+<script>
+  h1 = document.getElementById('method');
+  
+  function transfer() {
+    document.getElementById('v-pills-money-tab').click()
+    document.getElementById('v-pills-transfer-tab').click()
+    h1.innerHTML = "Transferir:";
+  }
+  function deposit() {
+    document.getElementById('v-pills-money-tab').click()
+    document.getElementById('v-pills-deposit-tab').click()
+    h1.innerHTML = "Depositar:";
+  }
+</script>
+{% endblock %}

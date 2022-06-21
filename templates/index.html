@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>© HPAY - Um banco de mentirinha.</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/Icon.png') }}">
+</head>
+
+<body id="body">
+    <main>
+        <nav>
+            <div class="navbar-brand">
+                <img src="{{ url_for('static', filename='imgs/Logo.png') }}" class="logo">
+            </div>
+            <div class="navbar-mobile">
+                <button class="navbar-expand" onclick="openNavbar();">
+                    <span class="fa-solid fa-bars text-white"></span>
+                </button>
+            </div>
+            <div class="navbar-body desktop">
+                <button class="nav-item" onclick="redirectNow('{{ url_for('main.index') }}');">Ajuda</button>
+                <button class="nav-item" onclick="redirectNow('{{ url_for('auth.login') }}');">Entrar</button>
+                <button class="nav-item solid" onclick="redirectNow('{{ url_for('auth.register') }}');">Criar conta</button>
+            </div>
+        </nav>
+        <center class="body">
+            <h1>Transfira, pague os amigos e<br class="desktop" /> compre com facilidade.</h1>
+            <button onclick="redirectNow('{{ url_for('auth.login') }}');">Comece agora!</button>
+        </center>
+    </main>
+    <footer>
+        <center class="navbar-brand">
+            <h1 class="logo"><i class="fa-solid fa-wallet"></i> HPAY</h1>
+            <h2>ESTE SITE NÃO FOI FEITO<br /> PARA PAGAMENTOS REAIS</h2>
+        </center>
+        <center class="navbar-body">
+            <div>
+                <h3>SOURCE</h3><br />
+                <ul style="text-align:left; list-style-type: none;">
+                    <a href="https://github.com/FelipeSavazii">
+                        <li>FELIPE SAVAZI</li>
+                    </a>
+                    <a href="https://github.com/Pietro222222">
+                        <li>PIETRO</li>
+                    </a>
+                    <a href="https://github.com/Banco-HPAY/">
+                        <li>CÓDIGO DO PROJETO</li>
+                    </a>
+                </ul>
+            </div>
+            <div class="last">
+                <h3>ACERCA DE</h3><br />
+                <ul style="text-align:left; list-style-type: none;">
+                    <a>
+                        <li>AJUDA</li>
+                    </a>
+                    <a>
+                        <li>TERMOS E POLÍTICAS</li>
+                    </a>
+                    <a>
+                        <li>PRIVACIDADE</li>
+                    </a>
+                </ul>
+            </div>
+        </center>
+        <center class="navbar-end">
+            <h1>
+                <a><i class="fa-brands fa-discord"></i></a>
+                <a><i class="fa-brands fa-instagram"></i></a>
+                <a><i class="fa-brands fa-youtube"></i></a>
+                <a href="https://github.com/Banco-HPAY/"><i class="fa-brands fa-github"></i></a>
+            </h1>
+            <p>© HPAY 2022 - COPYRIGHT</p>
+        </center>
+    </footer>
+    <div class="navbar-collapsed" id="navbar-collapsed">
+        <center class="navbar-brand">
+            <img src="{{ url_for('static', filename='imgs/Logo.png') }}" class="logo" width="200px">
+        </center>
+        <button class="navbar-expand" onclick="closeNavbar();">
+            <span class="fa-solid fa-close text-white"></span>
+        </button>
+        <center class="navbar-body">
+            <a href="{{ url_for('auth.register') }}" class="nav-item">Criar conta</a><br />
+            <a href="{{ url_for('auth.login') }}" class="nav-item">Entrar</a><br />
+            <a href="{{ url_for('main.index') }}" class="nav-item">Ajuda</a>
+        </center>
+    </div>
+    <div class="cookie-message" id="cookie-message">
+        <div class="cookie-head">
+            <h1>Esse site usa cookies.</h1>
+        </div>
+        <div class="cookie-body">
+            <p>
+                Nós armazenamos dados temporariamente para melhorar a sua experiência de navegação.
+                Ao utilizar nossos serviços você concorda com tais usos.
+            </p>
+            <a><u></under><span>Política de Privacidade</span></u></a>
+        </div>
+        <button onclick="hiddenCookieMessage();">Fechar popup.</button>
+    </div>
+    <script>
+        if (getCookie("cookieAccepted") == "") {
+            showCookieMessage();
+        }
+        
+        function showCookieMessage() {
+            div = document.getElementById('cookie-message');
+            div.style.display = "block";
+            document.cookie = "cookieAccepted=true; SameSite=Lax; expires=Tue, 19 Jan 2038 04:14:07 GMT";
+        }
+        function hiddenCookieMessage() {
+            div = document.getElementById('cookie-message');
+            div.style.display = "none";
+        }
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        function openNavbar() {
+            div = document.getElementById('navbar-collapsed');
+            div.style.display = "block";
+            body = document.getElementById('body');
+            body.style.overflowY = "hidden";
+            console.log('Navbar aberta.');
+        }
+        function closeNavbar() {
+            div = document.getElementById('navbar-collapsed');
+            div.style.display = "none";
+            body = document.getElementById('body');
+            body.style.overflowY = "auto";
+        }
+        function redirectNow(url) {
+          console.log("Redirecionando...")
+          window.location.href = url;
+        }
+    </script>
+</body>
+</html>

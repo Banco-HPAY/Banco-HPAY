@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - © HPAY</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='imgs/Icon.png') }}">
+</head>
+<body>
+    <main>
+        <section class="body">
+            <div class="section-head">
+                <h1>FAÇA LOGIN!</h1>
+                <p>Entre em sua conta para obter acesso.</p>
+            </div>
+            <div class="section-body">
+                <form action="{{ url_for('auth.api_login') }}" method="POST">
+                    <div>
+                        <label>
+                            <h2>E-mail</h2>
+                            <input type="email" placeholder="Insira o seu e-mail." id="e-mail" name="email">
+                        </label>
+                    </div>
+                    <div>
+                        <label>
+                            <h2>Senha</h2>
+                            <input type="password" placeholder="Insira a sua senha." id="passw" name="password">
+                        </label>
+                    </div>
+                    <div>
+                        <h2><a href="#")>Esqueci minha senha</a>.</h2>
+                        <button type="submit" style="margin-top: 30px;">Entrar</button>
+                    </div>
+                    <div>
+                        Ainda não tem acesso? <a href="{{ url_for('auth.register') }}">Registrar-se</a>.
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash-message" id="flash-message">
+            <div class="flash-body">
+                <p>
+                    {{ messages[0] }}
+                </p>
+            </div>
+            <button onclick="hiddenFlashMessage();">Fechar popup.</button>
+        </div>
+      {% endif %}
+    {% endwith %}
+    <script>
+        function hiddenFlashMessage() {
+            div = document.getElementById('flash-message');
+            div.style.display = "none";
+        }
+    </script>
+</body>
+</html>
